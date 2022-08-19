@@ -1,0 +1,57 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  schedule:
+    - cron: "0 14 * * *" # every day at Melbourne midnight
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install OS dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            tree \
+            subversion \
+            ragel \
+            curl \
+            texinfo \
+            g++ \
+            bison \
+            flex \
+            cvs \
+            yasm \
+            automake \
+            libtool \
+            autoconf \
+            gcc \
+            cmake \
+            git \
+            make \
+            pkg-config \
+            zlib1g-dev \
+            unzip \
+            pax \
+            nasm \
+            gperf \
+            autogen \
+            bzip2 \
+            autoconf-archive \
+            p7zip-full \
+            meson \
+            clang \
+            python \
+            python3-setuptools \
+            wget \
+            ed
+      - name: Build ffmpeg
+        run: sudo ./cross_compile_ffmpeg.sh
+      - name: List build result
+        run : tree -h .
