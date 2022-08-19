@@ -86,7 +86,17 @@ cd $ffmpeg_dir
     ./configure --enable-gpl --enable-libx264 --enable-nonfree \
       --enable-debug=3 --disable-optimizations \
       --arch=$arch --target-os=mingw32 \
+      --enable-libaom \
+      --enable-libass \
       --enable-libfdk-aac \
+      --enable-libfreetype \
+      --enable-libmp3lame \
+      --enable-libopus \
+      --enable-libsvtav1 \
+      --enable-libdav1d \
+      --enable-libvorbis \
+      --enable-libvpx \
+      --enable-libx265 \
       --cross-prefix=$host- --pkg-config=pkg-config --prefix=$prefix/ffmpeg_simple_installed || exit 1
   fi
   rm **/*.a # attempt force a kind of rebuild...
