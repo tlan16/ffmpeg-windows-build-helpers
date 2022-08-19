@@ -33,4 +33,4 @@ jobs:
       - name: Build ffmpeg
         run: sudo ./quick_build/quick_cross_compile_ffmpeg_fdk_aac_and_x264_using_packaged_mingw64.sh
       - name: List build result
-        run : tree -h .
+        run : tree -h ./sandbox_quick/win64/quick_install/install_root/ffmpeg_simple_installed
