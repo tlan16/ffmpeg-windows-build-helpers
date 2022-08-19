@@ -29,7 +29,29 @@ jobs:
             libtool-bin \
             nasm \
             gcc-mingw-w64-x86-64 \
-            g++-mingw-w64-x86-64
+            g++-mingw-w64-x86-64 \
+            build-essential \
+            cmake \
+            git-core \
+            libass-dev \
+            libfreetype6-dev \
+            libgnutls28-dev \
+            libmp3lame-dev \
+            libsdl2-dev \
+            libtool \
+            libva-dev \
+            libvdpau-dev \
+            libvorbis-dev \
+            libxcb1-dev \
+            libxcb-shm0-dev \
+            libxcb-xfixes0-dev \
+            meson \
+            ninja-build \
+            pkg-config \
+            texinfo \
+            wget \
+            yasm \
+            zlib1g-dev
       - name: Build ffmpeg
         run: sudo ./quick_build/quick_cross_compile_ffmpeg_fdk_aac_and_x264_using_packaged_mingw64.sh
       - name: List build result
