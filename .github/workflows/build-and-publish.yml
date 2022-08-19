@@ -18,40 +18,19 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            tree \
-            subversion \
-            ragel \
-            curl \
-            texinfo \
-            g++ \
-            bison \
-            flex \
-            cvs \
+            gcc-mingw-w64-i686 \
+            g++-mingw-w64-i686 \
             yasm \
-            automake \
-            libtool \
-            autoconf \
-            gcc \
-            cmake \
-            git \
             make \
+            automake \
+            autoconf \
+            git \
             pkg-config \
-            zlib1g-dev \
-            unzip \
-            pax \
+            libtool-bin \
             nasm \
-            gperf \
-            autogen \
-            bzip2 \
-            autoconf-archive \
-            p7zip-full \
-            meson \
-            clang \
-            python \
-            python3-setuptools \
-            wget \
-            ed
+            gcc-mingw-w64-x86-64 \
+            g++-mingw-w64-x86-64
       - name: Build ffmpeg
-        run: sudo ./cross_compile_ffmpeg.sh
+        run: sudo ./quick_build/quick_cross_compile_ffmpeg_fdk_aac_and_x264_using_packaged_mingw64.sh
       - name: List build result
         run : tree -h .
