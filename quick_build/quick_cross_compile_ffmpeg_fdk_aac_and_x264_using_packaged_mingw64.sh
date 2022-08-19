@@ -86,6 +86,7 @@ cd $ffmpeg_dir
     ./configure --enable-gpl --enable-libx264 --enable-nonfree \
       --enable-debug=3 --disable-optimizations \
       --arch=$arch --target-os=mingw32 \
+      --enable-libfdk-aac \
       --cross-prefix=$host- --pkg-config=pkg-config --prefix=$prefix/ffmpeg_simple_installed || exit 1
   fi
   rm **/*.a # attempt force a kind of rebuild...
